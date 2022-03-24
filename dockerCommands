@@ -1,0 +1,23 @@
+#docker basic commands
+docker images
+docker ps -a
+docker rm [container_name]
+docker image rmi -f [IMAGE_ID]
+docker build -t [image_name]:[image_version] .
+docker run --name plscmt -it -p [machine_port]:[container_port] [image_name]:[image_version]
+
+#docker hub operation
+docker tag [image_name]:[image_version] [hub_user]/[hub_image]:[hub_image_version]
+docker login
+docker push [hub_user]/[hub_image]:[hub_image_version]
+
+#podman pull
+podman pull docker.io/[hub_user]/[image_name]:[image_version]
+
+#others
+podman logs [container_name]
+podman logs -tail 20 [container_name]
+podman log -f [container_name]
+
+#into container
+docker exec -it [container_name] bash
